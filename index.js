@@ -12,12 +12,22 @@ import { countRouter } from "./routes/count.js";
 const app = express();
 dotenv.config(); 
 // app.use(cors());
+// app.use(
+//         cors({
+//           origin: "*",
+//           credentials: true
+//         })
+//       );
+
 app.use(
-        cors({
-          origin: "*",
-          credentials: true
-        })
-      );
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://radiant-daifuku-2ee562.netlify.app",
+    ],
+    credentials: true,
+  })
+);
 // app.use((req, res, next) => {
 //         res.setHeader("Access-Control-Allow-Origin", "*");
 //         res.header(
